@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cities
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var cities = new[] { "Alingsås", "Arboga", "Arvika", "Askersund", "Avesta", "Boden", "Bollnäs", "Borgholm", "Borlänge", "Borås", "Djursholm", "Eksjö", "Enköping", "Eskilstuna", "Eslöv", "Fagersta", "Falkenberg", "Falköping", "Falun", "Filipstad", "Flen", "Gränna", "Gävle", "Göteborg", "Hagfors", "Halmstad", "Haparanda", "Hedemora", "Helsingborg", "Hjo", "Hudiksvall", "Huskvarna", "Härnösand", "Hässleholm", "Höganäs", "Jönköping", "Kalmar", "Karlshamn", "Karlskoga", "Karlskrona", "Karlstad", "Katrineholm", "Kiruna", "Kramfors", "Kristianstad", "Kristinehamn", "Kumla", "Kungsbacka", "Kungälv", "Köping", "Laholm", "Landskrona", "Lidingö", "Lidköping", "Lindesberg", "Linköping", "Ljungby", "Ludvika", "Luleå", "Lund", "Lycksele", "Lysekil", "Malmö", "Mariefred", "Mariestad", "Marstrand", "Mjölby", "Motala", "Mölndal", "Nacka", "Nora", "Norrköping", "Norrtälje", "Nybro", "Nyköping", "Nynäshamn", "Nässjö", "Oskarshamn", "Oxelösund", "Piteå", "Ronneby", "Sala", "Sandviken", "Sigtuna", "Simrishamn", "Skanör-Falsterbo", "Skara", "Skellefteå", "Skänninge", "Skövde", "Sollefteå", "Solna", "Stockholm", "Strängnäs", "Strömstad", "Sundbyberg", "Sundsvall", "Säffle", "Säter", "Sävsjö", "Söderhamn", "Söderköping", "Södertälje", "Sölvesborg", "Tidaholm", "Torshälla", "Tranås", "Trelleborg", "Trollhättan", "Trosa", "Uddevalla", "Ulricehamn", "Umeå", "Uppsala", "Vadstena", "Varberg", "Vaxholm", "Vetlanda", "Vimmerby", "Visby", "Vänersborg", "Värnamo", "Västervik", "Västerås", "Växjö", "Ystad", "Åmål", "Ängelholm", "Örebro", "Öregrund", "Örnsköldsvik", "Östersund", "Östhammar" }.Select(_ => _.ToUpper();
+            var cities = new[] { "Alingsås", "Arboga", "Arvika", "Askersund", "Avesta", "Boden", "Bollnäs", "Borgholm", "Borlänge", "Borås", "Djursholm", "Eksjö", "Enköping", "Eskilstuna", "Eslöv", "Fagersta", "Falkenberg", "Falköping", "Falun", "Filipstad", "Flen", "Gränna", "Gävle", "Göteborg", "Hagfors", "Halmstad", "Haparanda", "Hedemora", "Helsingborg", "Hjo", "Hudiksvall", "Huskvarna", "Härnösand", "Hässleholm", "Höganäs", "Jönköping", "Kalmar", "Karlshamn", "Karlskoga", "Karlskrona", "Karlstad", "Katrineholm", "Kiruna", "Kramfors", "Kristianstad", "Kristinehamn", "Kumla", "Kungsbacka", "Kungälv", "Köping", "Laholm", "Landskrona", "Lidingö", "Lidköping", "Lindesberg", "Linköping", "Ljungby", "Ludvika", "Luleå", "Lund", "Lycksele", "Lysekil", "Malmö", "Mariefred", "Mariestad", "Marstrand", "Mjölby", "Motala", "Mölndal", "Nacka", "Nora", "Norrköping", "Norrtälje", "Nybro", "Nyköping", "Nynäshamn", "Nässjö", "Oskarshamn", "Oxelösund", "Piteå", "Ronneby", "Sala", "Sandviken", "Sigtuna", "Simrishamn", "Skanör-Falsterbo", "Skara", "Skellefteå", "Skänninge", "Skövde", "Sollefteå", "Solna", "Stockholm", "Strängnäs", "Strömstad", "Sundbyberg", "Sundsvall", "Säffle", "Säter", "Sävsjö", "Söderhamn", "Söderköping", "Södertälje", "Sölvesborg", "Tidaholm", "Torshälla", "Tranås", "Trelleborg", "Trollhättan", "Trosa", "Uddevalla", "Ulricehamn", "Umeå", "Uppsala", "Vadstena", "Varberg", "Vaxholm", "Vetlanda", "Vimmerby", "Visby", "Vänersborg", "Värnamo", "Västervik", "Västerås", "Växjö", "Ystad", "Åmål", "Ängelholm", "Örebro", "Öregrund", "Örnsköldsvik", "Östersund", "Östhammar" }.Select(_ => _.ToUpper());
 
             var matrix = new string[15, 15] { 
                 { "S", "G", "V", "K", "U", "Ö", "Y", "T", "M", "V", "D", "J", "O", "E", "I" },
@@ -29,8 +26,36 @@ namespace Cities
                 { "T", "N", "S", "E", "G", "M", "V", "Z", "R", "J", "E", "C", "I", "P", "O" },
                 { "A", "Y", "G", "J", "I", "D", "E", "Å", "V", "Z", "E", "K", "Ö", "F", "A" }
             };
-            
-             
+
+            var diagonals = "ATYJNGJUSJSLMEISABEGDYFXOÅMEBDAÄKQVÅSAEOKUAZVIDMBHÅTZRZVGÖTEBORGJESAXIMIJDOCEKAFRFUAKKFSBCÖCANBKALMARAIIFSPITEÅNMNTRMUPA";
+
+            var horisontals = "";
+
+            for (var y = 0; y < 15; y++)
+            {
+                for (var x = 0; x < 15; x++)
+                {
+                    horisontals = horisontals + matrix[y, x];
+                }
+            }
+
+            var verticals = "";
+
+            for (var x = 0; x < 15; x++)
+            {
+                for (var y = 0; y < 15; y++)
+                {
+                    verticals = verticals + matrix[y, x];
+                }
+            }
+
+            var all = horisontals + verticals + diagonals;
+
+            var citiesInMatrix = cities.Where(_ => all.Contains(_));
+
+            foreach (var city in citiesInMatrix) Console.WriteLine(city);
+
+            Console.ReadKey();
         }
     }
 }
